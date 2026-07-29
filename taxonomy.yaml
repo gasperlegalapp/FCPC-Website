@@ -1,0 +1,109 @@
+# Classification rules applied to every harvest. Deterministic, version-controlled,
+# reviewable. This is the "cleanup" layer -- authored once, executed every run.
+#
+# v1 scope: Franklin County, large + small estate.
+
+schema_version: "1.0"
+county: franklin
+scope:
+  categories: [large-estate, small-estate]
+
+# ---------------------------------------------------------------------------
+# Filing stage, derived from the numeric series in the form number.
+# Ohio probate form numbering is semantic -- the series IS the stage. This is
+# far more stable than keyword-matching form names, which the court rewords.
+# Parsed from PC-E-6.0 / ePC-E-13.8e / PC-EGT-1.R2 etc.
+# ---------------------------------------------------------------------------
+series_to_stage:
+  "1":  general_administrative
+  "2":  will_probate
+  "3":  appraisal
+  "4":  fiduciary_appointment
+  "5":  small_estate_relief
+  "6":  inventory
+  "7":  allowances_and_recovery
+  "8":  spousal_election
+  "9":  sale_personal_property
+  "10": distribution_in_kind
+  "11": real_estate_authority
+  "12": certificate_of_transfer
+  "13": accounts_and_claims
+  "14": wrongful_death
+  "15": reopening
+  "24": insolvency
+  "28": decedent_medical_records
+  "45": confidential_identifiers
+
+# ---------------------------------------------------------------------------
+# Document role, derived from the form NAME. Drives assembly: Franklin e-filing
+# generally requires applications and proposed entries as discrete filings, so
+# your app must know which is which and never merge them into one packet.
+# Ordered -- first match wins.
+# ---------------------------------------------------------------------------
+doc_role_patterns:
+  - {role: proposed_entry,  pattern: "^(Proposed )?(Journal |Judgment |Magistrate's )?(Entry|Order)\\b"}
+  - {role: proposed_entry,  pattern: "^Proposed Certificate\\b"}
+  - {role: application,     pattern: "^(Supplemental )?Application\\b"}
+  - {role: motion,          pattern: "^Motion\\b"}
+  - {role: waiver,          pattern: "^(Waiver|Surviving Spouse Waiver)\\b"}
+  - {role: consent,         pattern: "^Consent\\b"}
+  - {role: notice,          pattern: "^(Notice|Citation)\\b"}
+  - {role: service_return,  pattern: "^(Return Receipt|Return for|Verification of Service|Certificate of Service)\\b"}
+  - {role: certificate,     pattern: "^Certificate\\b"}
+  - {role: report,          pattern: "^(Report|Commissioner's Report|Statement in Lieu)\\b"}
+  - {role: schedule,        pattern: "^(Schedule|Continuation|Insolvency Schedule|Assets|Receipts)\\b"}
+  - {role: account,         pattern: "^Fiduciary's Account\\b"}
+  - {role: bond,            pattern: "^Fiduciary's Bond\\b"}
+  - {role: acceptance,      pattern: "^Fiduciary's Acceptance\\b"}
+  - {role: election,        pattern: "^Election\\b"}
+  - {role: disclosure,      pattern: "^(Confidential Disclosure|Affadavit|Affidavit|Filing Information|Real Property Questionnaire|Release From Administration Statement)\\b"}
+  - {role: informational,   pattern: "^Summary of General Rights\\b"}
+  - {role: presentation,    pattern: "^Presentation of Claim\\b"}
+
+# ---------------------------------------------------------------------------
+# Matter type by source category.
+# ---------------------------------------------------------------------------
+category_to_matter_type:
+  large-estate: estate.full_administration
+  small-estate: estate.small
+
+# ---------------------------------------------------------------------------
+# Task template keys. Generated as <matter_type>.<track_slug>.<step_slug> from
+# the court's own published packet structure -- the Small Estate page defines
+# tracks and numbered steps directly, so the templates are derived, not invented.
+#
+# Large Estate has no published step structure, so its forms are keyed by stage
+# instead. Where you want a real workflow packet for full administration, define
+# it here manually.
+# ---------------------------------------------------------------------------
+manual_packets:
+  estate.full_administration.open_case:
+    label: "Open full administration estate"
+    note: >
+      Franklin case-initiation minimums per the court's e-filing guidance.
+      VERIFY against the current Clerk requirements before relying on this;
+      the minimum set is not published as a form table and may have changed.
+    verified: false
+    forms:
+      - PC-E-1.0        # Surviving Spouse, Children, Next of Kin, Legatees, Devisees
+      - ePC-E-4.0       # Application for Authority to Administer Estate
+      - PC-E-4.0A       # Fiduciary's Acceptance
+      - ePC-E-4.5       # Proposed Entry Appointing Fiduciary; Letters of Authority
+    conditional:
+      no_death_certificate: [PC-E-1.Z]
+      will_exists: [ePC-E-e2.0, ePC-E-2.0P, ePC-E-2.3]
+      bond_required: [PC-4.2, PC-4.2e]
+      bond_waived: [PC-E-1.V]
+
+# ---------------------------------------------------------------------------
+# Companion pairings. Franklin e-filing splits the application from the proposed
+# entry; if your app produces one without the other the filing gets rejected.
+# Derived automatically where an entry shares the base number (4.0 / 4.0e),
+# with explicit overrides below for pairs that do not follow the convention.
+# ---------------------------------------------------------------------------
+companion_overrides:
+  ePC-E-4.0:   [ePC-E-4.5]
+  PC-E-5.10A:  [ePC-E-5.11]
+  ePC-E-5.0:   [ePC-E-5.6A]
+  ePC-E-6.0:   [ePC-E-6.0a]
+  PC-5.1C:     [ePC-E-5.1Ce]

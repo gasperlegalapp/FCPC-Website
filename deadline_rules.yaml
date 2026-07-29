@@ -1,0 +1,127 @@
+# =============================================================================
+# STATUTORY DEADLINE RULES -- Ohio decedents' estates
+#
+#   *** EVERY RULE BELOW IS UNVERIFIED. NONE MAY GO TO PRODUCTION UNTIL AN
+#   *** ATTORNEY HAS CHECKED IT AGAINST CURRENT R.C., Sup. R., AND LOC. R.
+#
+# These are NOT scraped. They cannot be. Deadlines come from statute and rule,
+# not from the PDFs on the court's website, and no amount of parsing will
+# produce them. They are hand-maintained here, seeded as a starting point.
+#
+# The seeds below are drafted from general familiarity with Ohio probate
+# practice and are offered as a work list, not as authority. Several are
+# genuinely uncertain -- particularly the account and extension timing, where
+# the interaction between R.C. 2109.301 and Sup. R. 78 governs and the local
+# rule may impose more. Pull the current text of each cited provision, confirm
+# or correct the interval and trigger, then flip `verified` to true and record
+# who checked it and when. Anything still false must be excluded from any
+# calculated date your app surfaces.
+#
+# Do not let this file drift. Statutes amend; this is the file that hurts you.
+# =============================================================================
+
+schema_version: "1.0"
+jurisdiction: OH
+county: franklin
+
+trigger_events:
+  - id: date_of_death
+    label: "Date of death"
+  - id: fiduciary_appointment
+    label: "Date of appointment of executor/administrator"
+  - id: will_admitted
+    label: "Date will admitted to probate"
+  - id: inventory_filed
+    label: "Date inventory filed"
+  - id: administration_complete
+    label: "Date administration completed"
+
+rules:
+
+  - id: oh.estate.inventory.initial
+    label: "File inventory and appraisal"
+    trigger: fiduciary_appointment
+    interval: {months: 3}
+    citation: "R.C. 2115.02"
+    forms: [ePC-E-6.0, ePC-E-6.0a, PC-E-6.1]
+    extendable_via: [PC-1.F]
+    verified: false
+    verify_note: "Confirm interval and whether Loc. R. shortens or conditions it."
+
+  - id: oh.estate.inventory.hearing
+    label: "Hearing on inventory set after filing"
+    trigger: inventory_filed
+    interval: {months: 1}
+    citation: "R.C. 2115.16"
+    forms: [PC-E-6.3, PC-E-6.2]
+    verified: false
+    verify_note: "Confirm; hearing may be waived. Check waiver practice in Franklin."
+
+  - id: oh.estate.claims.bar
+    label: "Claims against estate barred"
+    trigger: date_of_death
+    interval: {months: 6}
+    citation: "R.C. 2117.06(B)"
+    hard_bar: true
+    forms: [PC-E-13.11]
+    verified: false
+    verify_note: >
+      CRITICAL. This runs from date of death, not appointment, and is not
+      extendable. Confirm the interval and the presentment mechanics before
+      any calculated date is shown to a user.
+
+  - id: oh.estate.medicaid_recovery.notice
+    label: "Notice to administrator of Medicaid Estate Recovery Program"
+    trigger: fiduciary_appointment
+    interval: {days: 30}
+    citation: "R.C. 5162.21"
+    forms: [PC-E-7.0A]
+    verified: false
+    verify_note: "Confirm interval, trigger, and which estates are exempt."
+
+  - id: oh.estate.spousal_election
+    label: "Surviving spouse election to take against will"
+    trigger: fiduciary_appointment
+    interval: {months: 5}
+    citation: "R.C. 2106.01"
+    forms: [PC-E-8.0, PC-E-8.1, ePC-E-8.2, PC-E-8.3, ePC-E-8.4, PC-E-8.5]
+    verified: false
+    verify_note: >
+      Confirm the trigger. Election timing keys off service of the citation
+      and/or initial appointment; getting the anchor wrong here is severe.
+
+  - id: oh.estate.will_notice.service
+    label: "Notice of probate of will to interested parties"
+    trigger: will_admitted
+    interval: {days: 14}
+    citation: "R.C. 2107.19(A)"
+    forms: [PC-E-2.2, PC-E-2.2R, PC-E-2.4, PC-E-2.1A]
+    verified: false
+    verify_note: "Confirm both the service interval and the separate certificate-of-service deadline."
+
+  - id: oh.estate.administration.complete
+    label: "Estate fully administered / account due"
+    trigger: fiduciary_appointment
+    interval: {months: 6}
+    citation: "R.C. 2109.301; Sup. R. 78"
+    forms: [ePC-E-13.0, PC-E-13.1, PC-E-13.2, ePC-E-13.6A]
+    extendable_via: [ePC-E-13.8, ePC-E-13.8e, PC-E-13.10]
+    verified: false
+    verify_note: >
+      LEAST CERTAIN RULE IN THIS FILE. The six-month figure, whether it is a
+      completion deadline or an accounting deadline, and the interaction with
+      the thirty-day post-completion final account all need direct confirmation.
+      Do not ship until read from the current statute and Sup. R. 78.
+
+  - id: oh.estate.realestate_only.waiting_period
+    label: "Real Estate Only filing not permitted until 6 months after death"
+    trigger: date_of_death
+    interval: {months: 6}
+    direction: not_before
+    citation: "Franklin County Probate Court, Small Estate Forms page"
+    forms: [ePC-E-5.0G, PC-E-5.1B, ePC-E-12.0, ePC-E-12.1A, ePC-E-12.0e]
+    verified: false
+    verify_note: >
+      This one is stated on the court's own forms page ('May not be Filed Until
+      6 Months After Date of Death'), so it is better sourced than most here --
+      but confirm the underlying authority rather than citing a web page.
