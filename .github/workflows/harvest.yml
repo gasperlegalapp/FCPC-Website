@@ -1,0 +1,143 @@
+name: Monthly FCPC Forms Harvest
+
+# Runs the harvester on a schedule. If anything changed, opens a pull request
+# so the diff gets attorney review before it reaches main. If nothing changed,
+# exits quietly and touches nothing.
+
+on:
+  schedule:
+    # 09:00 UTC on the 1st of each month (~4-5am Eastern)
+    - cron: "0 9 * * 1"  # Mondays 09:00 UTC
+  workflow_dispatch:  # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 pypdf pyyaml
+
+      - name: Run harvester
+        id: harvest
+        run: python scrape_fcpc.py --out ./corpus
+
+      - name: Build published index
+        run: |
+          python build_index.py --corpus ./corpus \
+            --version "$(date +%Y.%m).0"
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if [ -z "$(git status --porcelain corpus)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes detected."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git status --porcelain corpus | head -50
+          fi
+
+      - name: Summarize diff
+        if: steps.changes.outputs.changed == 'true'
+        id: summary
+        run: |
+          LATEST=$(ls -1t corpus/diffs/*.json 2>/dev/null | head -1)
+          {
+            echo "## FCPC forms changed"
+            echo ""
+            if [ -n "$LATEST" ]; then
+              python - "$LATEST" <<'PY'
+          import json, sys
+          d = json.load(open(sys.argv[1]))
+          print(f"- **Added:** {len(d['added'])}")
+          print(f"- **Removed:** {len(d['removed'])}")
+          print(f"- **Changed:** {len(d['changed'])}")
+          print()
+          for r in d["added"]:
+              print(f"  - NEW `{r['form_number']}` {r['form_name']} ({r['category']})")
+          for r in d["removed"]:
+              print(f"  - GONE `{r['form_number']}` {r['form_name']} ({r['category']})")
+          for r in d["changed"]:
+              fields = ", ".join(r["changes"].keys())
+              print(f"  - MOD `{r['form_number']}` ({r['category']}): {fields}")
+          PY
+            fi
+            echo ""
+            echo "Do not merge until reviewed. Confirm any form whose "
+            echo "\`sha256\` or \`field_count\` moved before it reaches assembly."
+          } > /tmp/pr_body.md
+          cat /tmp/pr_body.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="harvest/$(date +%Y-%m)"
+          git config user.name  "fcpc-harvester[bot]"
+          git config user.email "actions@github.com"
+          git checkout -b "$BRANCH"
+          git add corpus
+          git commit -m "chore(corpus): monthly FCPC harvest $(date +%Y-%m)"
+          git push -u origin "$BRANCH" --force
+          gh pr create \
+            --title "FCPC forms changed — $(date +%B\ %Y)" \
+            --body-file /tmp/pr_body.md \
+            --base main \
+            --head "$BRANCH" \
+            || gh pr edit "$BRANCH" --body-file /tmp/pr_body.md
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: harvest-logs
+          path: |
+            corpus/diffs/
+            corpus/manifest.json
+          retention-days: 90
+
+  # ---------------------------------------------------------------------------
+  # Publish runs only on merge to main -- i.e. only after you have reviewed the
+  # harvest PR. This is what your workflow app consumes. It never reads main
+  # directly and never touches the court's website.
+  # ---------------------------------------------------------------------------
+  publish:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package corpus
+        id: pkg
+        run: |
+          VERSION=$(python -c "import json;print(json.load(open('corpus/index.json'))['corpus_version'])")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          zip -qr forms-pdfs.zip corpus/pdfs
+          cp corpus/index.json .
+
+      - name: Cut release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "corpus-${{ steps.pkg.outputs.version }}" \
+            index.json forms-pdfs.zip \
+            --title "FCPC corpus ${{ steps.pkg.outputs.version }}" \
+            --notes "Reviewed harvest. Pin this tag from the workflow app." \
+            || echo "Release already exists for this version; skipping."
