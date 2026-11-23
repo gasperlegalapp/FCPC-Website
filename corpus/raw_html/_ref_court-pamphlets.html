@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US">
+<!--<![endif]-->
+<head>
+	<!-- Published by OpenCities, 1.38.0.1 -->
+
+    
+        
+    
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="theme-color" content="#FFFFFF"/>
+    <title>Court Pamphlets | Franklin County Probate Court, Ohio</title>
+	<meta name="generator" content="OpenCities - https://granicus.com/product/opencities" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Using mobile-web-app-capable for now to enable full-screen experience on supported platforms -->
+    <!-- Note: This tag works mainly on Android Chrome. It does NOT enable full-screen mode on iOS Safari. -->
+    <!-- For iOS, the correct tag is: <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <!-- TODO: Monitor for updated meta tag standards from Apple or other browser vendors -->
+    <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="description" content="This section provides informational pamphlets designed to help you understand common Probate Court processes, requirements, and available resources. These materials offer general guidance to assist the public in preparing for and navigating court-related matters." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets" />
+    <meta property="og:title" content="Court Pamphlets" />
+    <meta property="og:description" content="This section provides informational pamphlets designed to help you understand common Probate Court processes, requirements, and available resources. These materials offer general guidance to assist the public in preparing for and navigating court-related matters." />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Court Pamphlets" />
+    <meta property="twitter:description" content="This section provides informational pamphlets designed to help you understand common Probate Court processes, requirements, and available resources. These materials offer general guidance to assist the public in preparing for and navigating court-related matters." />
+    <link rel="canonical" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets" />
+
+    
+    <link rel="icon" type="image/png" href="/files/ocfavicon/ProbateCourt/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/files/ocfavicon/ProbateCourt/favicon.svg" />
+<link rel="shortcut icon" href="/files/ocfavicon/ProbateCourt/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/files/ocfavicon/ProbateCourt/apple-touch-icon.png" />
+<link rel="manifest" href="/files/ocfavicon/ProbateCourt/site.webmanifest" />
+    <script>
+        (function () {
+            if (window.__UNLOAD_LAZY_PATCH__) return;
+            window.__UNLOAD_LAZY_PATCH__ = true;
+
+            var supportsPageHide = ("onpagehide" in window);
+            var mappedType = supportsPageHide ? "pagehide" : "beforeunload";
+            var nativeAdd = window.addEventListener;
+            var nativeRemove = window.removeEventListener;
+            var unloadMap = null;
+            var patched = false;
+
+            function ensurePatched() {
+                if (patched) return;
+                unloadMap = new WeakMap();
+
+                window.addEventListener = function (type, listener, options) {
+                    if (type === "unload") {
+                        var wrapped = function (evt) {
+                            if (supportsPageHide && evt.persisted) return;
+                            listener.call(this, evt);
+                        };
+                        unloadMap.set(listener, wrapped);
+                        return nativeAdd.call(this, mappedType, wrapped, options);
+                    }
+                    return nativeAdd.call(this, type, listener, options);
+                };
+
+                window.removeEventListener = function (type, listener, options) {
+                    if (type === "unload") {
+                        var wrapped = unloadMap.get(listener);
+                        if (wrapped) {
+                            nativeRemove.call(this, mappedType, wrapped, options);
+                            unloadMap.delete(listener);
+                        }
+                        return;
+                    }
+                    return nativeRemove.call(this, type, listener, options);
+                };
+
+                var orig = null;
+                Object.defineProperty(window, "onunload", {
+                    configurable: true, enumerable: true,
+                    get: function () { return orig; },
+                    set: function (h) {
+                        orig = h;
+                        if (typeof h === "function") window.addEventListener("unload", h);
+                    }
+                });
+                patched = true;
+            }
+
+            window.addEventListener = function (type, listener, options) {
+                if (type === "unload") {
+                    ensurePatched();
+                    return window.addEventListener(type, listener, options);
+                }
+                return nativeAdd.call(this, type, listener, options);
+            };
+
+            window.removeEventListener = function (type, listener, options) {
+                if (type === "unload" && !patched) {
+                    return;
+                }
+                return nativeRemove.call(this, type, listener, options);
+            };
+
+            function patchTelerik() {
+                ensurePatched();
+                var ns = window.RadAjaxNamespace;
+                if (!ns || !ns.EventManager || !ns.EventManager.Add || ns.EventManager.__UnloadPatched) return;
+                var origAdd = ns.EventManager.Add;
+                ns.EventManager.Add = function (el, evtName, handler, clientId) {
+                    if (el === window && evtName === "unload") {
+                        return window.addEventListener("unload", handler);
+                    }
+                    return origAdd.call(this, el, evtName, handler, clientId);
+                };
+                ns.EventManager.__UnloadPatched = true;
+            }
+
+            if (window.RadAjaxNamespace)
+                patchTelerik();
+            else (window.requestIdleCallback || function (cb)
+            {
+                setTimeout(cb, 120);
+            })(patchTelerik);
+        })();
+    </script>
+    <!-- Preconnecting to Google Fonts servers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Defer Roboto font loading to avoid render-blocking -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const robotoLink = document.createElement('link');
+            robotoLink.rel = 'stylesheet';
+            robotoLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap';
+            document.head.appendChild(robotoLink);
+        });
+    </script>
+
+    <style>
+        .gm-style, .gm-style * {
+            font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+        }
+    </style>
+
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, "js");
+    </script>
+    
+    
+        
+            <script type="text/javascript">
+                window.__oc_flags_ImprovedBreakpointEventHandling = true;
+            </script>
+            
+        
+    
+    
+    
+        <script type="text/javascript">
+            var __metaQueryBreakpoints = {
+                'sc-size-4': '(max-width: 480px)',
+                'sc-size-3': '(min-width: 480px) and (max-width: 768px)',
+                'sc-size-2': '(min-width: 768px) and (max-width: 992px)',
+                'sc-size-1': '(min-width: 992px)'
+            }
+
+            var __ocSizePoints = [
+                { min: 0, name: 'sc-size-4' },
+                { min: 480, name: 'sc-size-3' },
+                { min: 768, name: 'sc-size-2' },
+                { min: 992, name: 'sc-size-1' }
+            ];
+
+        </script>
+    
+
+    <!-- Framework Section -->
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/files/templates/00000000-0000-0000-0000-000000000000/0e283e0b-76ae-452c-b897-a24279cea79e/v/65/jquery-3.7.1.min.js?seamlessts=639263249789992245" ><\/script>')</script>
+
+    <!--Google Maps API Loader – Improved Version to avoid Warning
+    This script loads the Google Maps JavaScript API using a dynamic and async method.
+    It replaces the old static <script> tag to avoid performance warnings from Google.
+
+    Dynamically creates the <script> tag with loading = async for better performance
+    Builds the API URL with required libraries(places, geometry, marker, geocoding)
+    Uses a Promise and callback(google.maps.__ib__) to confirm when the script is ready
+
+    It Avoids Google’s warning about direct script loading
+    Improves page load speed by loading the API asynchronously-->
+
+    
+    <script src="/files/templates/00000000-0000-0000-0000-000000000000/0e283e0b-76ae-452c-b897-a24279cea79e/v/65/modernizr.custom.710f3bf.js?seamlessts=639263249789992245" defer></script>
+    
+    <!--// End Framework Section -->
+    <!-- OpenCities Section -->
+    <script>
+        var OpenCities = OpenCities || {};
+        OpenCities.Paths = {
+            SiteTemplate: '/files/templates/00000000-0000-0000-0000-000000000000/0e283e0b-76ae-452c-b897-a24279cea79e/v/65/',
+            ThemePath: '/files/templates/00000000-0000-0000-0000-000000000000/0e283e0b-76ae-452c-b897-a24279cea79e/v/65/'
+        };
+    </script>
+    <script src='/ocapi/ea56eb51-00fd-4eb5-9b7b-753e74ddbdfe/en-US/websitesettings.js'></script>
+    <script src="/files/templates/00000000-0000-0000-0000-000000000000/0e283e0b-76ae-452c-b897-a24279cea79e/v/65/oc_head.js?applied=20260317113833"></script>
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/0e283e0b-76ae-452c-b897-a24279cea79e/v/65/oc_grid.css~oc_style.css~oc_wizard_style.css~oc_main.css~oc_forms.css~oc_wizard.css~oc_wizard_menu.css~oc_main_s1.css~oc_wizard_s1.css~oc_wizard_menu_s1.css~oc_grid_s1.css~OcScriptCombine_Minify0?uniqueid=20260317113833" rel="stylesheet" type="text/css">
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/0e283e0b-76ae-452c-b897-a24279cea79e/v/65/client_style.css~client.css~client_menu.css~client_s1.css~client_menu_s1.css~client_forms.css~OcScriptCombine_Minify0?uniqueid=20260317113833" rel="stylesheet" type="text/css">
+    <script>
+(function (BackgroundSettings, $, undefined) {
+    BackgroundSettings.initialise = function () {
+        this.Application = {"CSSSelector":".background-container","EnableFade":false,"MediaType":"image"};
+    };
+} (OpenCities.BackgroundSettings = OpenCities.BackgroundSettings || {}, jQuery));
+OpenCities.BackgroundSettings.initialise();
+</script>
+    
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/0e283e0b-76ae-452c-b897-a24279cea79e/v/65/oc_print.css~client_print.css~OcScriptCombine_Minify0?uniqueid=20260317113833" rel="stylesheet" type="text/css" media="print">
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<script src="/files/oc-templates/00000000-0000-0000-0000-000000000000/0e283e0b-76ae-452c-b897-a24279cea79e/v/65/external_plugins.js~oc_form_helper.js~oc_main.js~plugins.js~oc_main_init.js~OcScriptCombine_Minify0?uniqueid=20260317113833" defer="true"></script>
+    <script async src="https://docaccess.com/docbox.js"></script>
+    
+
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="DYTCK-JM9C8-ED4EP-C3GGK-Z575H",function(){function e(){if(!r){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.appendChild(e),r=!0}}function t(e){r=!0;var n,t,a,i,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",i=(a.frameElement||a).style,i.width=0,i.height=0,i.border=0,i.display="none",o.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void 0;",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=14,window.BOOMR.url=n+"DYTCK-JM9C8-ED4EP-C3GGK-Z575H";var i=document.currentScript||document.getElementsByTagName("script")[0],o=i.parentNode,r=!1,d=document.createElement("link");if(d.relList&&"function"==typeof d.relList.supports&&d.relList.supports("preload")&&"as"in d)window.BOOMR.snippetMethod="p",d.href=window.BOOMR.url,d.rel="preload",d.as="script",d.addEventListener("load",e),d.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!r)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.appendChild(d);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="qtcfbuqx37zfi2yeu2za-f-f4b0674f0-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"41","ak.cp":"1995795","ak.ai":parseInt("1075935",10),"ak.ol":"0","ak.cr":13,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"64894e09","ak.r":43888,"ak.a2":n,"ak.m":"dscb","ak.n":"essl","ak.cport":36920,"ak.gh":"23.205.108.84","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1795466930","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==0l2AErSphyPtx80nacv7wXg1n1fsDiEgS0UiroXMP2KM/uuKbmK4+Npz6KNivM93SBJ+z8+XO1rPgJbxCqnzq+3Sjmg2wvjse05HGd4Q1OG1sM75ugslXqHNVErJ3sgEIauejM/8UZJfwDb9CBAuZW3vMPQhGm5gY9veOLf/r2q3jKXrJE9C2EjAPVXUJqP3bEvq8VEYmgq2B/nbE/1M6j1N0tX7tPNM3n1f0wPIz6/nAuRg8uTnksqzaani3OBTR5Rx7mm2VFV5fXLiawXt9h/QT3LX0n/WOZh6J1NkYX6ueE3Zg3hnCd0Cpk33g34QUjEN92MWfBY0p3vr646ffz91fBlR4MffVKVcsqvSybYGRy1L+RXDndagcGqLId4gzYS7b10Z/ALYOLr7DHgT/tLlZFTYmUxjmYMfSwvI+yE=","ak.pv":"370","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body class="body layout-modern  site-search-always-visble  content-type-oc-general content-template-oc-full-width-without-image group-template-oc-full-width-with-default-header page-name-court-pamphlets page-sequence-4 page-depth-3 page-section-2 website-type-primary device-desktop " id="body-top">
+    <div id="skip-to-content-container">
+        <a href="#main-content" class="visuallyhidden focusable" id="skip-to-content-link">Skip to main content</a>
+    </div>
+    <script>
+        // OCNOW-11988 (Cursor): Proactively focus skip link when returning from browser chrome.
+        // Must run inline (not deferred oc_main.js) so focus is intercepted before NVDA speaks footer.
+        (function () {
+            var awaitingReentry = false;
+            var inertSupported = 'inert' in HTMLElement.prototype;
+
+            function isExplicitlyOutsideDocument(node) {
+                return node != null && !document.documentElement.contains(node);
+            }
+
+            function getSkipContainer() {
+                return document.getElementById('skip-to-content-container');
+            }
+
+            function getSkipLink() {
+                return document.getElementById('skip-to-content-link');
+            }
+
+            function applyGuard() {
+                awaitingReentry = true;
+                if (!inertSupported) {
+                    return;
+                }
+                var skipContainer = getSkipContainer();
+                var children = document.body.children;
+                for (var i = 0; i < children.length; i++) {
+                    if (children[i] !== skipContainer) {
+                        children[i].setAttribute('inert', '');
+                    }
+                }
+            }
+
+            function clearGuard() {
+                awaitingReentry = false;
+                if (!inertSupported) {
+                    return;
+                }
+                var children = document.body.children;
+                for (var i = 0; i < children.length; i++) {
+                    children[i].removeAttribute('inert');
+                }
+            }
+
+            function isSkipLinkElement(target) {
+                if (!target) {
+                    return false;
+                }
+                var skipContainer = getSkipContainer();
+                return target.id === 'skip-to-content-link' ||
+                    (skipContainer && skipContainer.contains(target));
+            }
+
+            function focusSkipLink() {
+                var skipLink = getSkipLink();
+                if (!skipLink) {
+                    return;
+                }
+                if (window.scrollY > 0) {
+                    window.scrollTo(0, 0);
+                }
+                skipLink.focus({ preventScroll: true });
+            }
+
+            function scheduleGuardIfDocumentLostFocus() {
+                window.setTimeout(function () {
+                    if (!document.hasFocus()) {
+                        applyGuard();
+                    }
+                }, 0);
+            }
+
+            document.addEventListener('focusout', function (e) {
+                if (isExplicitlyOutsideDocument(e.relatedTarget)) {
+                    applyGuard();
+                }
+            }, true);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Tab') {
+                    scheduleGuardIfDocumentLostFocus();
+                } else if (e.key === 'F6' || (e.key === 'l' && e.ctrlKey)) {
+                    scheduleGuardIfDocumentLostFocus();
+                }
+            }, true);
+
+            window.addEventListener('focus', function () {
+                if (!awaitingReentry) {
+                    return;
+                }
+                applyGuard();
+                focusSkipLink();
+            }, true);
+
+            document.addEventListener('focusin', function (e) {
+                var reentryFromChrome = awaitingReentry || isExplicitlyOutsideDocument(e.relatedTarget);
+                if (!reentryFromChrome) {
+                    return;
+                }
+                if (isSkipLinkElement(e.target)) {
+                    clearGuard();
+                    return;
+                }
+                applyGuard();
+                focusSkipLink();
+                clearGuard();
+            }, true);
+        })();
+    </script>
+    <form name="mainForm" method="post" action="/About/Court-Information/Court-Pamphlets" id="mainForm">
+<input type="hidden" name="ctl04_seamless_script_manager_TSM" id="ctl04_seamless_script_manager_TSM" value="" />
+<input type="hidden" name="__SEAMLESSVIEWSTATE" id="__SEAMLESSVIEWSTATE" value="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" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl04_seamless_script_manager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3add3ac3d5-1e29-4112-8fed-529caffa8f24%3aea597d4b%3bOpenCities.CustomControls%3aen-US%3a7197b077-b068-4a69-9481-a6cf2e7718f9%3a8e1d32bf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=EYVjNsQ7oYmzBqCI0dkEyYe0LYmPcVFL4WPcQCXhKfQwUqkAT7lLra0za-OLMuUUcCyPINdTVMHIWti96-8R_oN-trjXUUZnJRzckxTjid4ecctwwEJyNI-05jZYvXHBRiEKL0MUQMEyEJ2FXanyE1uBk88RxZ1wVK6AUn9D4v8rW-LNx2OOtB8vE3hC8P0jk4XZt7GAPiCeYQolxUlwFZA8cuOfgd4u08OASxFdh8mChz3A0YHhuwRrXGVlulfs9SJVkAvulhjdHYIIp1SRohDxt9acTwxUQrOlxuxC847b00zOOWg9SlpwD_iBuQQ1rOK9WH9O_wN9c2TXm4GeXaQHHT4yQ9IlzZXw6th8ch3f-k_n1yYeeurDMbwChXW1Vh_7rpu00kgmegsg9w2J3ququXIPfy2Gq8IscVTmtwouupfmUzAOicU_yESgQ-dG0" type="text/javascript"></script>
+    
+<script type="text/javascript">
+    try{
+        function SeamlessEndRequestHandler(sender, args) {
+            try {
+                var dataItems = args.get_dataItems();
+                if(dataItems.ctl04_seamless_script_manager)
+                    document.getElementById('__SEAMLESSVIEWSTATE').value = dataItems.ctl04_seamless_script_manager;
+            }
+            catch (e) { }
+        }
+
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(SeamlessEndRequestHandler);
+    }
+    catch (e) { }
+</script>
+
+    <div class="unsupported-browser-warning js-element"></div>
+    
+    <div hidden>
+        <span id="new-window-0">opens in new tab or window </span>
+    </div>
+    <div class="overlay-container"></div>
+    
+    <div class="background-container">
+        <div class="page-container">
+            <!-- OC Layout Element GROUP TEMPLATE -->
+            <!--groupTemplateStart--><header>
+            <div class="toolbar-outer-container">
+  <div class="toolbar-inner-container clearfix">
+    <div class="toolbar-item toolbar-quicklinks toolbar-display-dropdown">
+	<button type="button" aria-controls="toolbar-quicklinks-drop-down" aria-expanded="false" class="toolbar-button toolbar-button-quicklinks js-element"><span>Quick Links</span><i aria-hidden="true"></i></button>	
+	<div id="toolbar-quicklinks-drop-down" class="toolbar-drop-down toolbar-quicklinks-drop-down clearfix">
+		<ul>
+		  <li><a href="https://probate.franklincountyohio.gov/Home/Contact" class="oc-icon-b oc-i--none link-type-internal"><span>Contact</span></a></li>
+		</ul>
+	</div>
+</div><div class="toolbar-item toolbar-language notranslate toolbar-display-dropdown"><div class="no-js-element">
+		  <ul>
+		    <li id="toolbar-language-option-en-us-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=en-US" class="lang-item lang-en-us" data-translate-to="en-us" lang="en-US">English (United States)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-ar-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=ar" class="lang-item lang-ar" data-translate-to="ar" lang="en">Arabic<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-zh-cn-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=zh-CN" class="lang-item lang-zh-cn" data-translate-to="zh-cn" lang="en">Chinese (Simplified)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-fr-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=fr" class="lang-item lang-fr" data-translate-to="fr" lang="en">French<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-ht-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=ht" class="lang-item lang-ht" data-translate-to="ht" lang="en">Haitian Creole<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-hi-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=hi" class="lang-item lang-hi" data-translate-to="hi" lang="en">Hindi<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-ko-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=ko" class="lang-item lang-ko" data-translate-to="ko" lang="en">Korean<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-ne-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=ne" class="lang-item lang-ne" data-translate-to="ne" lang="en">Nepali<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-ru-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=ru" class="lang-item lang-ru" data-translate-to="ru" lang="en">Russian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-so-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=so" class="lang-item lang-so" data-translate-to="so" lang="en">Somali<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-es-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=es" class="lang-item lang-es" data-translate-to="es" lang="en">Spanish<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-uk-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=uk" class="lang-item lang-uk" data-translate-to="uk" lang="en">Ukrainian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-vi-noscript"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=vi" class="lang-item lang-vi" data-translate-to="vi" lang="en">Vietnamese<span class="visuallyhidden"> Select this as your preferred language</span></a></li>
+          </ul>
+		</div>
+	<button type="button" role="combobox" aria-controls="toolbar-language-drop-down" aria-expanded="false" aria-haspopup="listbox" aria-autocomplete="none" aria-labelledby="toolbar-language-label" class="toolbar-button toolbar-button-language js-element">  
+        <span class="toolbar-language-globe-icon" aria-hidden="true"></span>
+        <span id="toolbar-language-label" class="current-language">
+            Select a language to translate to
+		</span>
+		<i aria-hidden="true"></i>
+	</button>
+	<div id="toolbar-language-drop-down" role="listbox" aria-label="Available languages" class="toolbar-drop-down toolbar-language-drop-down js-element clearfix">
+		<ul role="group">
+		    <li role="presentation"><a id="toolbar-language-option-en-us" role="option" aria-selected="true" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=en-US" class="lang-item lang-en-us" data-translate-to="en-us" lang="en-US">English (United States)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-ar" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=ar" class="lang-item lang-ar" data-translate-to="ar" lang="en">Arabic<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-zh-cn" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=zh-CN" class="lang-item lang-zh-cn" data-translate-to="zh-cn" lang="en">Chinese (Simplified)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-fr" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=fr" class="lang-item lang-fr" data-translate-to="fr" lang="en">French<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-ht" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=ht" class="lang-item lang-ht" data-translate-to="ht" lang="en">Haitian Creole<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-hi" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=hi" class="lang-item lang-hi" data-translate-to="hi" lang="en">Hindi<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-ko" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=ko" class="lang-item lang-ko" data-translate-to="ko" lang="en">Korean<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-ne" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=ne" class="lang-item lang-ne" data-translate-to="ne" lang="en">Nepali<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-ru" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=ru" class="lang-item lang-ru" data-translate-to="ru" lang="en">Russian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-so" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=so" class="lang-item lang-so" data-translate-to="so" lang="en">Somali<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-es" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=es" class="lang-item lang-es" data-translate-to="es" lang="en">Spanish<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-uk" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=uk" class="lang-item lang-uk" data-translate-to="uk" lang="en">Ukrainian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-vi" role="option" aria-selected="false" href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets?oc_lang=vi" class="lang-item lang-vi" data-translate-to="vi" lang="en">Vietnamese<span class="visuallyhidden"> Select this as your preferred language</span></a></li>
+        </ul>
+	</div></div>
+  </div>
+</div>
+            <div class="header-outer-container">
+    <div class="header-container header-layout-4  clearfix">
+			<div class="header-site-logo">
+				<a href="https://probate.franklincountyohio.gov/Home" lang="en-US" aria-label="Franklin County Court of Common Pleas, Probate Division, Ohio - Home - Logo">
+				</a>
+			</div>
+      
+		    <div class="mobile-search-btn js-element">
+		        <button><i aria-hidden="true"></i><span class="mobile-search-btn-text"><span class="visuallyhidden">Open </span>Search</span></button>
+		    </div>
+		    <div class="header-website-settings">
+                <button id="btn-mob-nav" type="button" aria-expanded="false" aria-controls="nav">
+                    <i aria-hidden="true"></i><span class="side-menu-btn-text">Menu</span>
+                </button>
+        	</div>
+          <div class="navigation-outer-container">
+	<div id="nav" role="navigation" class="navigation-container  navigation-container-option-8" data-menu-type="horizontal" aria-label="primary">
+        <div class="grid">
+            <div class="col-xs-12">              
+                <ul class="sf-menu mega-menu" id="sc-main-menu"><li class="nav-section-quarters-1 nav-active-path  first-item nav-item-seq-1">
+<a href="https://probate.franklincountyohio.gov/About" class="nav-level-1 nav-has-children"  target="">
+	<i class="item-icon" aria-hidden="true"></i><span class="item-text">About</span>
+</a>
+<button aria-label="Expand" aria-controls="sc-menu-second-level-nav-item-seq-1" aria-haspopup="true" class="mobnav-subarrow" ><i aria-hidden="true"></i></button>
+<ul id="sc-menu-second-level-nav-item-seq-1" class="second-level-container ch-13">
+
+          
+            <li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/Judge-Mackey" class=""  target="">Judge Mackey</a></li><li class="second-level-item nav-active-path "><a href="https://probate.franklincountyohio.gov/About/Court-Information" class="nav-has-children"  target="">Court Information</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-2" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-2" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Costs"  target="">Court Costs</a></li><li  class="third-level-item  "><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Hours"  target="">Court Hours</a></li><li  class="third-level-item  "><a href="https://probate.franklincountyohio.gov/About/Court-Information/Courthouse-Directions"  target="">Courthouse Directions</a></li><li  class="third-level-item nav-active-path nav-active-page"><a href="https://probate.franklincountyohio.gov/About/Court-Information/Court-Pamphlets"  target="">Court Pamphlets</a></li><li  class="third-level-item  "><a href="https://probate.franklincountyohio.gov/About/Court-Information/Mission-Statement"  target="">Mission Statement</a></li></ul></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/Community-Resources" class=""  target="">Community Resources</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/Disclaimer-and-Privacy" class=""  target="">Disclaimer And Privacy Statement</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/e-Filing" class=""  target="">e-Filing</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/e-Hearing-Locator" class=""  target="">e-Hearing Locator</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/e-Meeting-Locator" class=""  target="">e-Meeting Locator</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/Employment-Opportunities" class=""  target="">Employment Opportunities</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/Interpretation-Services" class=""  target="">Interpretation Services</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/Media-Access" class=""  target="">Media Access</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/Ohio-Probate-Courts" class=""  target="">Ohio Probate Courts</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/Related-Links" class=""  target="">Related Links</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/About/Small-Estate-Resource-Center" class=""  target="">Small Estate Resource Center</a></li></ul></li>
+          
+            <li class="nav-section-quarters-1   nav-item-seq-2">
+<a href="https://probate.franklincountyohio.gov/Departments" class="nav-level-1 nav-has-children"  target="">Departments</a>
+<button aria-label="Expand" aria-controls="sc-menu-second-level-nav-item-seq-2" aria-haspopup="true" class="mobnav-subarrow" ><i aria-hidden="true"></i></button>
+<ul id="sc-menu-second-level-nav-item-seq-2" class="second-level-container ch-13">
+
+          
+            <li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Adoption" class=""  target="">Adoption</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Birth-Correction-Delayed-Birth-Registration" class=""  target="">Birth Correction / Delayed Birth Registration</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Certified-Records" class=""  target="">Certified Records</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Civil-Litigation" class=""  target="">Civil Litigation</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Custodial-Accounts" class=""  target="">Custodial Accounts</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Estates-Large" class=""  target="">Estates (Large)</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Estates-Small" class=""  target="">Estates (Small)</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Guardianship" class=""  target="">Guardianship</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Marriage" class=""  target="">Marriage</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Mediation" class=""  target="">Mediation</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Name-Change" class=""  target="">Name Change</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Involuntary-Civil-Commitments" class=""  target="">Involuntary Civil Commitments</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Departments/Unclaimed-Funds" class=""  target="">Unclaimed Funds</a></li></ul></li>
+          
+            <li class="nav-section-quarters-2   nav-item-seq-3">
+<a href="https://probate.franklincountyohio.gov/Forms" class="nav-level-1 nav-has-children"  target="">Forms</a>
+<button aria-label="Expand" aria-controls="sc-menu-second-level-nav-item-seq-3" aria-haspopup="true" class="mobnav-subarrow" ><i aria-hidden="true"></i></button>
+<ul id="sc-menu-second-level-nav-item-seq-3" class="second-level-container ch-18">
+
+          
+            <li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Adoption-Forms" class=""  target="">Adoption Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Advance-Directives-Forms" class=""  target="">Advance Directives Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Birth-Records-Forms" class=""  target="">Birth Records Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Civil-Forms" class=""  target="">Civil Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Custodial-Account-Forms" class=""  target="">Custodial Account Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Disinterment-Forms" class=""  target="">Disinterment Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Guardianship-Forms" class=""  target="">Guardianships Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Large-Estate-Forms" class=""  target="">Large Estate Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Marriage-Forms" class=""  target="">Marriage Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Minors-Settlement-Forms" class=""  target="">Minor's Settlement Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Miscellaneous-Forms" class=""  target="">Miscellaneous Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Name-Change-Forms" class=""  target="">Name Change Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Involuntary-Civil-Commitment-Forms" class=""  target="">Involuntary Civil Commitment Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Small-Estate-Forms" class=""  target="">Small Estate Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Successor-Custodian-Forms" class=""  target="">Successor Custodian Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Trust-Forms" class=""  target="">Trust Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Unclaimed-Funds-Forms" class=""  target="">Unclaimed Funds Forms</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Forms/Wrongful-Death-Trust-Declaration-Forms" class=""  target="">Wrongful Death Trust Declaration Forms</a></li></ul></li>
+          
+            <li class="nav-section-quarters-2   nav-item-seq-4">
+<a href="https://probate.franklincountyohio.gov/Local-Rules-Administrative-Orders" class="nav-level-1 "  target="">Local Rules & Administrative Orders</a>
+</li>
+          
+            <li class="nav-section-quarters-3   nav-item-seq-5">
+<a href="https://probate.franklincountyohio.gov/Record-Search" class="nav-level-1 nav-has-children"  target="">Record Search</a>
+<button aria-label="Expand" aria-controls="sc-menu-second-level-nav-item-seq-5" aria-haspopup="true" class="mobnav-subarrow" ><i aria-hidden="true"></i></button>
+<ul id="sc-menu-second-level-nav-item-seq-5" class="second-level-container ch-2">
+
+          
+            <li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Record-Search/General-Case-Search" class=""  target="">General Case Search</a></li><li class="second-level-item  "><a href="https://probate.franklincountyohio.gov/Record-Search/Marriage-License-Search" class=""  target="">Marriage License Search</a></li></ul></li>
+          
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+			
+			<div class="header-search-control-container" id="header-search">
+				<div class="search-inner-container">
+					<div class="sc-search-panel">
+	<label for="ctl08_txtSearch" id="ctl08_lblSearch" class="sc-search-label">Search</label><input name="ctl08$txtSearch" type="text" id="ctl08_txtSearch" class="sc-search-text" placeholder="What are you looking for?" /><input type="submit" name="ctl08$btnSearch" value="Search" id="ctl08_btnSearch" class="sc-search-button" />
+</div>
+					<div role="status" id="predictiveResults"></div>
+				</div>
+			</div>
+    </div>
+</div>
+
+            
+            </header>
+            <div class="content-outer-container">
+                <div id="main" role="main" class="main-outer-container clearfix">
+                        
+                        <div class="content-main-container">
+                            <div class="grid">
+					            <div class="col-xs-12">
+						            <nav id="breadcrumbs-container" aria-label="You Are Here :">
+							            <span role="list">
+<span role="listitem">
+	<a href="https://probate.franklincountyohio.gov/Home"  lang="en-US">Home</a>
+	<span class="nav-separator" aria-hidden="true" role="presentation">/</span>
+</span>
+          <span role="listitem"><a href="https://probate.franklincountyohio.gov/About" >About</a><span class='nav-separator' aria-hidden="true" role="presentation">/</span></span><span role="listitem">
+	<a href="https://probate.franklincountyohio.gov/About/Court-Information" >
+		Court Information
+	</a>
+	<span class='nav-separator' aria-hidden="true" role="presentation">/</span>
+</span>
+<span class="current-page" role="listitem" aria-current="page" >Court Pamphlets</span>
+          </span>
+						            </nav>
+					            </div>
+                      
+					            <div class="col-xs-12">
+						            <div class="main-inner-container">
+							            <div id="main-content" class="main-container clearfix">
+							              
+                            <!-- OC Layout Element Conent Template -->
+							              <!--normalTemplateStart--><div class="grid">
+    <div class="col-xs-12">
+        <h1 class='oc-page-title '>Court Pamphlets</h1>
+        
+        <table id="birth-records-form" class="sc-responsive-table" style="width: 100%;">
+<thead>
+<tr>
+<th id="birth-records-form_heading_1" style="width: 70%;">Pamphlet Name and Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td headers="birth-records-form_heading_1"><a href="/files/assets/probatecourt/v/1/documents/pamphlets/adoptions.pdf" target="_self" title="Adoptions.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Adoptions<span class="file-info">(PDF,&nbsp;4MB)</span></a></td>
+</tr>
+<tr>
+<td headers="birth-records-form_heading_1"><a href="/files/assets/probatecourt/v/2/documents/pamphlets/estate-administration.pdf" target="_self" title="Estate-Administration.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Estate Administration<span class="file-info">(PDF,&nbsp;3MB)</span></a></td>
+</tr>
+<tr>
+<td headers="birth-records-form_heading_1"><a href="/files/assets/probatecourt/v/2/documents/pamphlets/good-deeds_1.pdf" target="_self" title="Good-Deeds_1.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Good Deeds Program<span class="file-info">(PDF,&nbsp;1MB)</span></a></td>
+</tr>
+<tr>
+<td headers="birth-records-form_heading_1"><a href="/files/assets/probatecourt/v/2/documents/pamphlets/guardianships.pdf" target="_self" title="Guardianships.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Guardianships<span class="file-info">(PDF,&nbsp;3MB)</span></a></td>
+</tr>
+<tr>
+<td headers="birth-records-form_heading_1"><a href="/files/assets/probatecourt/v/1/documents/pamphlets/marriage.pdf" target="_self" title="Marriage.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Marriage<span class="file-info">(PDF,&nbsp;3MB)</span></a></td>
+</tr>
+<tr>
+<td headers="birth-records-form_heading_1"><a href="/files/assets/probatecourt/v/1/documents/pamphlets/name-changes.pdf" target="_self" title="Name-Changes.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Name Changes<span class="file-info">(PDF,&nbsp;3MB)</span></a></td>
+</tr>
+<tr>
+<td headers="birth-records-form_heading_1"><a href="/files/assets/probatecourt/v/1/documents/pamphlets/bmv-rack-card_1.pdf" target="_self" title="BMV-Rack-Card_1.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Ohio's Compliant DL-ID Driver License &amp; the Probate Court<span class="file-info">(PDF,&nbsp;808KB)</span></a></td>
+</tr>
+<tr>
+<td headers="birth-records-form_heading_1"><a href="/files/assets/probatecourt/v/2/documents/pamphlets/small-estates.pdf" target="_self" title="Small-Estates.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Small Estates<span class="file-info">(PDF,&nbsp;2MB)</span></a>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+
+      
+        
+            
+        
+    </div>
+    
+    
+</div><!--normalTemplateEnd-->
+                            
+                            
+                            
+							            </div>
+						            </div>
+					            </div>
+                        
+                            </div>
+                        </div>
+                        <div class="back-to-top-container text-center">
+                            <a href="#body-top" id="back-to-top"><i aria-hidden="true"></i><span class="js-visuallyhidden">Back to top</span></a>
+                        </div>
+                </div>
+            </div><!--groupTemplateEnd-->
+            <footer>
+                
+                    <div class="footer-outer-container footer-first-row">
+                        <div class="footer-container clearfix">
+                            <div class="grid grid-pad">
+                                <div class="col-xs-12 col-s-6 col-m-4 col-lg-4 visuallyhidden" >
+	
+	<h2>Site Footer</h2>
+
+
+	
+	
+</div><div class="col-xs-12 col-s-12 col-m-12 col-lg-12 visuallyhidden" >
+	
+	<h2>Site Footer</h2>
+
+
+	
+	
+</div><div class="col-xs-12 col-s-12 col-m-6 col-lg-3 contact-widget" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">Contact Us</h3>
+			
+	<p>373 S. High Street<br />
+22nd Floor<br />
+Columbus, Ohio 43215</p>
+<p class="footer-map-link"><a href="https://maps.app.goo.gl/K8HctW7t3hjXU5mb8" target="_blank">View on Map</a></p>
+<p>Phone: <a href="tel:6145253894">(614) 525-3894</a><br />
+Email: <a href="mailto:probate@franklincountyohio.gov">probate@franklincountyohio.gov</a></p>
+
+
+	
+	
+</div><div class="col-xs-12 col-s-12 col-m-6 col-lg-3 social-media-widget" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">Share &amp; Connect</h3>
+			
+	
+	<ul class="footer-links with-icons social-media-links">  <li class="footer-link-">
+	<a href="https://probate.franklincountyohio.gov/About/Employment-Opportunities" target="_self"  >
+<i aria-hidden="true"></i>Employment Opportunities
+</a>
+</li>
+           </ul>
+	
+</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="footer-outer-container footer-second-row">
+                    <div class="footer-container clearfix">
+                        <div class="grid grid-pad footer-secondary-links">
+                            <div class="col-xs-12 col-m-7">
+                                
+                                    <div><a href="https://probate.franklincountyohio.gov/About/Discalimer-and-Privacy" target="_self"  >Disclaimer & Privacy Statement</a>&nbsp;| <a href="https://probate.franklincountyohio.gov/Sitemap" target="_self"  >Sitemap</a>&nbsp;| <a href="https://www.franklincountyohio.gov/Admin-Area/Site-Management/Site-Footer/Sub-Footer-Links/Accessibility-Statement/Franklin-County-Accessibility-Statement" target="_blank"  >Accessibility Statement</a></div>
+                                
+                            </div>
+                            <div class="col-xs-12 col-m-5 powered-by">
+                                <div class="right">
+                                    &copy; 2026 Franklin County Court of Common Pleas, Probate Division, Ohio&nbsp;|&nbsp;<span class="powered-by">Powered by <a href="https://granicus.com/solution/govaccess/opencities/" target="_blank">Granicus</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/files/oc-resources/e521d8c4-2ade-4311-808c-94cdb3bcc80b/JsTextSnippets.js?ocsvclang=en-US" type="text/javascript"></script><script></script>
+    
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-230JR668GT"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-230JR668GT');
+</script>
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('ctl04_seamless_script_manager_TSM');//]]>
+</script>
+</form>
+</body>
+</html>
